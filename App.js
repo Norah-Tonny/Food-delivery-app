@@ -2,27 +2,35 @@ import React from 'react';
 import {View, Text, Image, StyleSheet, TextInput, Button} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import HomeScreen from './src/screens/HomeScreen';
 import SignUpScreen from './src/screens/SignUpScreen';
 import WelcomingScreen from './src/screens/WelcomingScreen';
 import DisplayScreen from './src/screens/DisplayScreen';
 import LoginScreen from './src/screens/LoginScreen'
-import CredentialScreen from './src/screens/CredentialScreen';
+import PhoneScreen from './src/screens/PhoneScreen';
+import CategoryScreen from './src/screens/CategoryScreen';
+import InitialScreen from './src/screens/InitialScreen';
+import SingleScreen from './src/screens/SingleScreen';
+import { useState } from 'react';
+import HomeScreen from './src/screens/HomeScreen';
 const Stack = createNativeStackNavigator();
 
 
 const App = () => {
   return (
     // <View style={styles.container}>
-    <NavigationContainer >
 
-      <Stack.Navigator initialRouteName="User Credential">
+      <NavigationContainer >
+
+      <Stack.Navigator initialRouteName="Home">
 
         <Stack.Screen
         name="Home"
         component={HomeScreen}
       />
-      
+      <Stack.Screen
+        name="Category"
+        component={CategoryScreen}
+      />
         <Stack.Screen
         name="Welcome"
         component={WelcomingScreen}
@@ -42,13 +50,25 @@ const App = () => {
           component={LoginScreen} />
         
         <Stack.Screen
-          name="User Credential"
-          component={CredentialScreen} />
+          name="User"
+          component={PhoneScreen} />
+        
+        <Stack.Screen
+          name="Single"
+          component={SingleScreen}
+        />
+
+<Stack.Screen
+          name="Initial"
+          component={InitialScreen}
+        />
 
 
-      </Stack.Navigator>
+            </Stack.Navigator>
 
-    </NavigationContainer>
+      </NavigationContainer>
+    
+
   );
 };
 

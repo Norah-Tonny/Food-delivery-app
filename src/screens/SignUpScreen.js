@@ -62,7 +62,7 @@ onChangeText={(text) =>setName(text)}
             
           <TouchableOpacity
           style={styles.button}
-          onPress={newUser}>
+          >
           <Text>Sign Up</Text>
 
           </TouchableOpacity>
