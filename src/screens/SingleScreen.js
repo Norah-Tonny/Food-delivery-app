@@ -1,6 +1,7 @@
 import { View,Text,Image, ScrollView,TouchableOpacity } from "react-native";
 import { data } from "./data";
-const SingleScreen = () => {
+import { NavigationContainer } from "@react-navigation/native";
+const SingleScreen = (navigation,route) => {
     return (
 
         <ScrollView>
@@ -9,7 +10,7 @@ const SingleScreen = () => {
                 data.map(item => {
 
                     return (
-                        <TouchableOpacity onPress={()=>Navigation.navigate('HomeScreen')}>
+                        <TouchableOpacity onPress={()=>navigation.navigate('HomeScreen')}>
                         <View>
                             <Image source={item.image} />
                             <Text>{item.name}</Text>

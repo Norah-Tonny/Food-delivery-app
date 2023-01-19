@@ -1,7 +1,7 @@
 import { View,Text,Image, TouchableOpacity } from "react-native"
 import { data } from "./data";
 
-const InitialScreen =() => {
+const InitialScreen =(navigation,route) => {
     return (
         <View>
             {
@@ -9,7 +9,7 @@ const InitialScreen =() => {
                 data.map(orders => {
                     return (
 
-                        <TouchableOpacity onPress={()=>Navigation.navigate('SingleScreen')}>
+                        <TouchableOpacity onPress={()=>navigation.navigate('SingleScreen')}>
                 <View>
                     <Text>{ orders.category }</Text>
                     <Text><Image source={orders.image} /></Text>
