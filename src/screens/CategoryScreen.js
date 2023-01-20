@@ -1,24 +1,55 @@
-import { Text, View, Image } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { Text, View, Image, TouchableOpacity } from "react-native";
 import { data } from "./data";
 
 
-const CategoryScreen = () => {
+const CategoryScreen = ({ navigation, route }) => {
+    const { filteredData } = route.params
+    console.log(filteredData)
+
     return (
-        < View >
-            <Text>mmmmmmmmmmmmmmmm</Text>
-            {/* {
-                
-                data.map(category => {
-                    { category.category }
-                    <Image source={category.image} />
-                    { category.name }
-                    { category.price }
+        <View>
+            {
+
+                filteredData.map(item => {
+                    return (
+
+                            <TouchableOpacity onPress={()=>navigation.navigate('Single', { item })}>
+                        <View>
+
+                                <Text>{item.category}</Text>
+                                <Text>{item.name}</Text>
+                                <Text>{item.price}</Text>
+
+
+                        </View>
+                            </TouchableOpacity>
+
+
+
+
+                    )
+
+
 
                 })
 
-            } */}
+
+
+
+            }
+
 
         </View>
+
     )
+
+
+
+
+
+
+
 }
+
 export default CategoryScreen

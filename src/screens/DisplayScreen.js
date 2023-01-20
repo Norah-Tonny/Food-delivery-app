@@ -16,7 +16,7 @@ const DisplayScreen = ({navigation}) => {
             
             <TouchableOpacity
                     style={styles.button}
-                    onPress={() => { navigation.navigate("Home") }}>
+                    onPress={() => { navigation.navigate("Start") }}>
                     <Text style={styles.btn}>Skip</Text>
                 
         </TouchableOpacity>

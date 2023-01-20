@@ -20,6 +20,7 @@ const HomeScreen = () => {
   }, [fullData, selectedCategory]);
 
   const onClick = select => {
+    navigation.navigate('categpories',{filteredData})
     setSelectedCategory(select);
     //   console.log(filteredData)
   };
