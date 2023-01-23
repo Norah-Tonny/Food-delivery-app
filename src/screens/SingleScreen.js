@@ -1,10 +1,10 @@
-import {View, Text, Image, ScrollView, TouchableOpacity} from 'react-native';
+import {View, Text, Image, ScrollView, StyleSheet,TouchableOpacity} from 'react-native';
 import {data} from './data';
 import {NavigationContainer} from '@react-navigation/native';
 const SingleScreen = ({navigation, route}) => {
     const {item}=route.params
   return (
-    <ScrollView>
+    <ScrollView stryle={styles.Single}>
           <View>
         <Text>{item.category}</Text>
         <Image source={item.image} style={styles.singleImage} />
@@ -16,7 +16,17 @@ const SingleScreen = ({navigation, route}) => {
 };
 export default SingleScreen;
 
+const styles = StyleSheet.create = ({
+  Single: {
+    display: 'flex',
+    // justify-content:
 
-// const styles = styles.create{
-  
-// }
+},
+
+singleImage: {
+  width: 80,
+  height: 80
+
+  },
+
+})

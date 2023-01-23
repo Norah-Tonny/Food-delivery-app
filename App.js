@@ -2,7 +2,8 @@ import React from 'react';
 import {View, Text, Image, StyleSheet, TextInput, Button} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import SignUpScreen from './src/screens/SignUpScreen';
 import WelcomingScreen from './src/screens/WelcomingScreen';
 import DisplayScreen from './src/screens/DisplayScreen';
@@ -11,46 +12,19 @@ import PhoneScreen from './src/screens/PhoneScreen';
 import CategoryScreen from './src/screens/CategoryScreen';
 import InitialScreen from './src/screens/InitialScreen';
 import SingleScreen from './src/screens/SingleScreen';
-import {useState} from 'react';
 import StartScreen from './src/screens/StartScreen';
 import CartScreen from './src/screens/CartScreen';
 import ProfileScreen from './src/screens/ProfileScreen';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
-
-
-
-
-
+const Drawer = createDrawerNavigator();
 
 
 const MyTab = () => {
   return (
-   
-    <Tab.Navigator>
-    <Tab.Screen name="Start" component={StartScreen} />
-
-    <Tab.Screen name="Cart" component={CartScreen} />
-
-    <Tab.Screen name="Profile" component={ProfileScreen} />
-  </Tab.Navigator>
-  );
-
-};
-
-const App = () => {
-  return (
-    // <View style={styles.container}>
-
-    //       <NavigationContainer >
-
-    //       </NavigationContainer>
-
-    <NavigationContainer>
-
-<Stack.Navigator initialRouteName="Welcome">
-      <Stack.Screen name="Start" component={MyTab} />
+    <Stack.Navigator initialRouteName="Welcome">
+      <Stack.Screen name="Starto" component={MyDrawer} />
       <Stack.Screen name="Category" component={CategoryScreen} />
       <Stack.Screen name="Welcome" component={WelcomingScreen} />
       <Stack.Screen name="Display" component={DisplayScreen} />
@@ -61,7 +35,31 @@ const App = () => {
       <Stack.Screen name="Initial" component={InitialScreen} />
     </Stack.Navigator>
 
+  );
+};
 
+  
+const MyDrawer = () => {
+  return (
+    <Drawer.Navigator>
+      <Drawer.Screen name="Start" component={StartScreen} />
+      <Drawer.Screen name="Login" component={LoginScreen} />
+    </Drawer.Navigator>
+  );
+};
+
+
+
+
+const App = () => {
+  return (
+  
+    <NavigationContainer>
+    <Tab.Navigator screenOptions={{header:false}}>
+    <Tab.Screen name="Starte" component={MyTab} />
+    <Tab.Screen name="Cart" component={CartScreen} />
+    <Tab.Screen name="Profile" component={ProfileScreen} />
+  </Tab.Navigator>
 
     </NavigationContainer>
   );

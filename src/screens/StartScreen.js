@@ -95,9 +95,9 @@ const styles = StyleSheet.create({
   },
 
   categories: {
-    // display: 'flex',
+    display: 'flex',
     flexDirection: 'row',
-    // justifyContent: 'spacearound',
+    justifyContent: 'space-around',
   },
 
   paragraph: {

@@ -1,8 +1,10 @@
-import { Text, Touchable, TouchableOpacity,ImageBackground, View,TextInput, SafeAreaView,StyleSheet } from "react-native"
+import { Text,TouchableOpacity,ImageBackground, View,TextInput, SafeAreaView,StyleSheet } from "react-native"
 import React,{Component} from "react"
 import { useState } from "react"
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase";
+import { addDoc, collection } from "firebase/firestore"; 
+
 
 const image = { uri: "https://images.unsplash.com/photo-1615719413546-198b25453f85?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1936&q=80" };
 
@@ -24,7 +26,25 @@ const SignUpScreen = ({navigation}) => {
         })
         .catch((error) => {
           console.log(error)
-        });
+        }).then
+
+      // Add a second document with a generated ID.
+
+try {
+  const docRef = await addDoc(collection(db, "users"), {
+    name:'',
+    email:'',
+    password:'',
+    born: 1912
+  });
+
+  console.log("Document written with ID: ", docRef.id);
+} catch (e) {
+  console.error("Error adding document: ", e);
+}
+
+
+      
      
     }
 

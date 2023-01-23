@@ -38,6 +38,7 @@ const PhoneScreen = () => {
    
 export default PhoneScreen;
 
+
 const styles = StyleSheet.create({
     
     input: {

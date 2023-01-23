@@ -14,13 +14,13 @@ const WelcomingScreen = ({navigation}) => {
             <View style={styles.fixToText}>
             <TouchableOpacity
             style={styles.button}
-            onPress={()=>{navigation.navigate("Home")}}>
+            onPress={()=>{navigation.navigate("Start")}}>
                 <Text  style={styles.btn}>Skip</Text>
                 </TouchableOpacity>
                 
                 <TouchableOpacity
             style={styles.button}
-            onPress={()=>{navigation.navigate("Home")}}>
+            onPress={()=>{navigation.navigate("Start")}}>
             <Text style={styles.btn}>Next</Text>
             </TouchableOpacity>
             
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
         color: 'orange',
         textAlign: 'center',
         textTransform: 'uppercase',
-        margin: 12,
+        margin: 30,
         fontWeight: 'bold',
         fontSize:30,
     },
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         position:"absolute",
-        bottom: 0,
+        top: 600,
     }, 
 
     button: {
@@ -65,7 +65,8 @@ const styles = StyleSheet.create({
         margin: 3,
         borderColor:'orange',
         backgroundColor: 'transparent',
-        borderRadius:10,
+        borderRadius: 10,
+        
       
         
     },
